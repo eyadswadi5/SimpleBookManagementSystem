@@ -1,0 +1,279 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+html, body {
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+.navbar-container {
+    position: fixed;
+    z-index: 50;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    backdrop-filter: blur(3px);
+    width: 250px;
+    padding: 10px 0px;
+    background-color: rgba(71, 169, 255, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar-container a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+.container {
+    width: 600px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+.container-lg {
+    width: 950px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+.form-group {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin: 20px 0px;
+}
+.tiny-form-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.tiny-form-group input {
+    width: 50%;
+}
+.tiny-form-group input[type=number] {
+    width: 22.5%;
+}
+input {
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 8px 10px;
+    transition: 0.2s;
+}
+input:focus {
+    box-shadow: 0px 0px 0px 3px rgba(83, 175, 255, 0.5);
+}
+textarea {
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 8px 10px;
+    transition: 0.2s;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}
+textarea:focus {
+    box-shadow: 0px 0px 0px 3px rgba(83, 175, 255, 0.5);
+}
+button {
+    background-color: rgb(62, 165, 255);
+    color: aliceblue;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    float: right;
+    transition: 0.2s;
+    margin: 0px 2px;
+}
+button:hover {
+    background-color: rgb(16, 143, 255);
+}
+button:focus {
+    box-shadow: 0px 0px 0px 3px rgba(16, 143, 255, 0.5);
+}
+.file-input-container {
+    position: relative;
+}
+.file-input-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.file-input-label:hover {
+    border-color: #3498db;
+    background-color: #f0f8ff;
+}
+.file-input-label i {
+    font-size: 48px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+.file-input-label span {
+    font-size: 16px;
+    color: #555;
+}
+.file-input-label .browse-text {
+    color: #3498db;
+    font-weight: 600;
+}
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.preview-container {
+    margin-top: 5px;
+}
+.preview-image {
+    max-width: 200px;
+    max-height: 300px;
+    border-radius: 4px;
+    border: 2px solid lightgray;
+    background-color: rgb(245, 245, 245);
+    display: none;
+}
+.books-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+}
+.book-card {
+    width: 230px;
+    height: 400px;
+    display: flex;
+    flex-flow: column;
+}
+.book-cover-img {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    padding: 10px 0px;
+    background-color: rgb(206, 233, 255);
+    border-radius: 5px 5px 0px 0px;
+}
+.book-cover-img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.book-details {
+    background-color: rgb(193, 227, 255);
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+}
+.book-details p:first-child {
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.book-details p:nth-child(2) {
+    font-size: 15px;
+    margin: 5px 0px;
+    opacity: 0.7;
+}
+.book-details p:nth-child(3) {
+    font-size: 17px;
+    margin: 10px 0px;
+    opacity: 0.7;
+}
+.invalid-feedback {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(255, 99, 71, 0.3);
+    border-radius: 5px;
+    color: tomato;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: left;
+}
+.book-details-card {
+    width: 100%;
+    display: flex;
+}
+.book-details-card .book-cover {
+    flex: 30%;
+}
+.book-details-card .book-cover img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.book-info {
+    flex: 70%;
+    padding: 20px 30px;
+    text-align: left;
+}
+.book-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.author {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+.description {
+    font-size: 17px;
+}
+.delete-btn {
+    background-color: tomato;
+    color: aliceblue;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    float: right;
+    transition: 0.2s;
+}
+.delete-btn:hover {
+    background-color: rgb(254, 58, 23);
+}
+.delete-btn:focus {
+    box-shadow: 0px 0px 0px 3px rgba(254, 58, 23, 0.3);
+}
